@@ -3,7 +3,7 @@ package com.enlevo.taskly_flow.domain
 import jakarta.persistence.*
 import java.time.LocalDateTime
 
-@Table(name = "jobs")
+@Table(name = "tasks")
 @Entity
 data class Task(
 
