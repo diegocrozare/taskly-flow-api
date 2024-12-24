@@ -1,6 +1,7 @@
 package com.enlevo.taskly_flow.controller
 
 import com.enlevo.taskly_flow.domain.Task
+import com.enlevo.taskly_flow.domain.TaskDTO
 import com.enlevo.taskly_flow.service.TaskService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
@@ -14,7 +15,7 @@ import org.springframework.web.util.UriComponentsBuilder
 class TasksController(private val service: TaskService) {
 
     @PostMapping
-    fun addTask(@RequestBody task: Task, uriBuilder: UriComponentsBuilder): ResponseEntity<Task> {
+    fun addTask(@RequestBody task: TaskDTO, uriBuilder: UriComponentsBuilder): ResponseEntity<Task> {
         val createdTask = service.addTask(task)
 
         val location = uriBuilder
