@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.*
 import org.springframework.web.util.UriComponentsBuilder
 
 @RestController
-@RequestMapping("/tasks")
+@RequestMapping("/taskly")
 class TasksController(private val service: TaskService) {
 
-    @PostMapping
+    @PostMapping("/tasks")
     fun addTask(
         @RequestBody task: TaskDTO,
         uriBuilder: UriComponentsBuilder
@@ -23,13 +23,13 @@ class TasksController(private val service: TaskService) {
         return ResponseEntity.created(location).body(createdTask)
     }
 
-    @GetMapping
+    @GetMapping("/tasks")
     fun getTask(): ResponseEntity<List<Task>> {
         val tasks = service.getTask()
         return ResponseEntity.ok(tasks)
     }
 
-    @PatchMapping("/{id}")
+    @PatchMapping("/tasks/{id}")
     fun updateTask(
         @PathVariable id: Long,
         @RequestBody update: Map<String, Any>

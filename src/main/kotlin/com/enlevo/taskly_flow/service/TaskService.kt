@@ -3,7 +3,6 @@ package com.enlevo.taskly_flow.service
 import com.enlevo.taskly_flow.domain.Task
 import com.enlevo.taskly_flow.domain.TaskDTO
 import com.enlevo.taskly_flow.repository.TaskRepository
-import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Service
 
 @Service
